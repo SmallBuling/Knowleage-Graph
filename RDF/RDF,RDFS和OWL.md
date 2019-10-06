@@ -5,8 +5,10 @@
   - [RDF的三种类型](#RDF的三种类型)
   - [RDF序列化方法](#RDF序列化方法)
 - [RDF的“衣服”——RDFS/OWL](#RDF的“衣服”——RDFS/OWL)
-
-  
+- [RDFS](#RDFS)
+- [OWL](#OWL)
+  - [数据建模能力](#数据建模能力)
+  - [推理能力](#推理能力)
 <!-- /TOC-->
 --------------------------------------------------
 ## RDF
@@ -174,6 +176,7 @@
 - OWL，即“Web Ontology Language”，语义网技术栈的核心之一。OWL有两个主要的功能：
     - 提供快速、灵活的数据建模能力。
     - 高效的自动推理。
+    
 ### 数据建模能力
 >@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
 >@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
