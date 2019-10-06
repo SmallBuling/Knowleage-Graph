@@ -36,4 +36,5 @@
 >>>kg:chineseName其实就是"http:// www.kg.com/ontology/chineseName"的缩写。
 
 <div align="center"><img src="./picture/罗纳尔多.jpg" height="" /></div>
+
 - 我们其实可以认为知识图谱就包含两种节点类型，资源和字面量。借用数据结构中树的概念，字面量类似叶子节点，出度为0。
