@@ -224,3 +224,16 @@
 >:coordinate rdf:type owl:DatatypeProperty;  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:domain :Place;  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:range xsd:string .  
+
+- 罗纳尔多这个例子不能展现OWL丰富的表达能力，我们这里简单介绍一下常用的词汇：
+
+- 描述属性特征的词汇
+    - owl:TransitiveProperty. 表示该属性具有传递性质。例如，我们定义“位于”是具有传递性的属性，若A位于B，B位于C，那么A肯定位于C。
+    - owl:SymmetricProperty. 表示该属性具有对称性。例如，我们定义“认识”是具有对称性的属性，若A认识B，那么B肯定认识A。
+    - owl:FunctionalProperty. 表示该属性取值的唯一性。 例如，我们定义“母亲”是具有唯一性的属性，若A的母亲是B，在其他地方我们得知A的母亲是C，那么B和C指的是同一个人。
+    - owl:inverseOf. 定义某个属性的相反关系。例如，定义“父母”的相反关系是“子女”，若A是B的父母，那么B肯定是A的子女。
+
+- 本体映射词汇（Ontology Mapping）
+    - owl:equivalentClass. 表示某个类和另一个类是相同的。
+    - owl:equivalentProperty. 表示某个属性和另一个属性是相同的。
+    - owl:sameAs. 表示两个实体是同一个实体。
