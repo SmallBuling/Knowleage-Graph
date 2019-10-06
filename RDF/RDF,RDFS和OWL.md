@@ -243,3 +243,16 @@
 ><http://www.zhangsan.com/ontology/Person> rdf:type owl:Class .  
 ><http://www.lisi.com/ontology/Human> rdf:type owl:Class .  
 ><http://www.zhangsan.com/ontology/Person> owl:equivalentClass <http://www.lisi.com/ontology/Human> .
+
+### 推理能力
+- 知识图谱的推理主要分为两类：基于**本体**的推理和基于**规则**的推理。
+>我们这里谈的是基于本体的推理。读者应该发现，上面所介绍的属性特征词汇其实就创造了对RDF数据进行推理的前提。此时，我们加入支持OWL推理的推理机（reasoner），就能够执行基于本体的推理了。RDFS同样支持推理，由于缺乏丰富的表达能力，推理能力也不强。举个例子，我们用RDFS定义人和动物两个类，另外，定义人是动物的一个子类。此时推理机能够推断出一个实体若是人，那么它也是动物。OWL当然支持这种基本的推理，除此之外，凭借其强大的表达能力，我们能进行更有实际意义的推理。想象一个场景，我们有一个庞大数据库存储人物的亲属关系。里面很多关系都是单向的，比如，其只保存了A的父亲（母亲）是B，但B的子女字段里面没有A，如下表。
+
+<div align="center"><img src="./picture/表格.png" height="" /></div>
+
+>如果在只有单个关系，数据量不多的情况下，我们尚能人工的去补全这种关系。如果在关系种类上百，人物上亿的情况下，我们如何处理？当进行关系修改，添加，删除等操作的时候，该怎么处理？这种场景想想就会让人崩溃。如果我们用inversOf来表示hasParent和hasChild互为逆关系，上面的数据可以表示为：
+
+<div align="center"><img src="./picture/父子推理.jpg" height="" /></div>
+
+- 绿色的关系表示是我们RDF数据中真实存在的，红色的关系是推理得到的。
+
