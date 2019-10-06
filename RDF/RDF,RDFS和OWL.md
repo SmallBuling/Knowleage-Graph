@@ -121,8 +121,8 @@
 
 - rdfs当中不区分数据属性和对象属性，词汇rdf:Property定义了属性，即RDF的“边”。
 >:chineseName rdf:type rdf:Property;  
->        rdfs:domain :Person;  
->        rdfs:range xsd:string .  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:domain :Person;  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:range xsd:string .  
  
 >:career rdf:type rdf:Property;  
 >        rdfs:domain :Person;  
