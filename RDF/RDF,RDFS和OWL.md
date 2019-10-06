@@ -38,3 +38,23 @@
 <div align="center"><img src="./picture/罗纳尔多.jpg" height="" /></div>
 
 - 我们其实可以认为知识图谱就包含两种节点类型，资源和字面量。借用数据结构中树的概念，字面量类似叶子节点，出度为0。
+
+### RDF序列化方法
+- RDF/XML，顾名思义，就是用XML的格式来表示RDF数据。之所以提出这个方法，是因为XML的技术比较成熟，有许多现成的工具来存储和解析XML。然而，对于RDF来说，XML的格式太冗长，也不便于阅读，通常我们不会使用这种方式来处理RDF数据。
+- N-Triples，即用多个三元组来表示RDF数据集，是最直观的表示方法。在文件中，每一行表示一个三元组，方便机器解析和处理。开放领域知识图谱DBpedia通常是用这种格式来发布数据的。
+- Turtle, 应该是使用得最多的一种RDF序列化方式了。它比RDF/XML紧凑，且可读性比N-Triples好。
+- RDFa, 即“The Resource Description Framework in Attributes”，是HTML5的一个扩展，在不改变任何显示效果的情况下，让网站构建者能够在页面中标记实体，像人物、地点、时间、评论等等。也就是说，将RDF数据嵌入到网页中，搜索引擎能够更好的解析非结构化页面，获取一些有用的结构化信息。
+- JSON-LD，即“JSON for Linking Data”，用键值对的方式来存储RDF数据。
+- 我们结合罗纳尔多知识图的例子，给出其N-Triples和Turtle的具体表示。
+>Example1 N-Triples:
+
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/chineseName> "罗纳尔多·路易斯·纳萨里奥·德·利马"^^string.  
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/career> "足球运动员"^^string.  
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/fullName> "Ronaldo Luís Nazário de Lima"^^string.  
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/birthDate> "1976-09-18"^^date.
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/height> "180"^^int.
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/weight> "98"^^int.
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/nationality> "巴西"^^string.
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/hasBirthPlace> <http://www.kg.com/place/10086>.
+><http://www.kg.com/place/10086> <http://www.kg.com/ontology/address> "里约热内卢"^^string.
+><http://www.kg.com/place/10086> <http://www.kg.com/ontology/coordinate> "-22.908333, -43.196389"^^string.
