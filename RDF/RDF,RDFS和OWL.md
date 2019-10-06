@@ -76,3 +76,21 @@
 >person:1 :hasBirthPlace place:10086.  
 >place:10086 :address "里约热内卢"^^string.  
 >place:10086 :coordinate "-22.908333, -43.196389"^^string.  
+
+- 同一个实体拥有多个属性（数据属性）或关系（对象属性），我们可以只用一个subject来表示，使其更紧凑。我们可以将上面的Turtle改为：
+>Example3 Turtle:  
+
+>@prefix person: <http://www.kg.com/person/> .  
+>@prefix place: <http://www.kg.com/place/> .  
+>@prefix : <http://www.kg.com/ontology/> .  
+
+>person:1 :chineseName "罗纳尔多·路易斯·纳萨里奥·德·利马"^^string;  
+>         :career "足球运动员"^^string;  
+>         :fullName "Ronaldo Luís Nazário de Lima"^^string;  
+>         :birthDate "1976-09-18"^^date;  
+>         :height "180"^^int;  
+>         :weight "98"^^int;  
+>         :nationality "巴西"^^string;   
+>         :hasBirthPlace place:10086.  
+>place:10086 :address "里约热内卢"^^string;  
+>            :coordinate "-22.908333, -43.196389"^^string.  
