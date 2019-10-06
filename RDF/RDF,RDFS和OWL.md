@@ -29,6 +29,7 @@
 
 <div align="center"><img src="./picture/罗纳尔多spo.jpg" height="" /></div>
 
->"www.kg.com/person/1"是一个IRI，用来唯一的表示“罗纳尔多”这个实体。
+>"www.kg.com/person/1"
+>是一个IRI，用来唯一的表示“罗纳尔多”这个实体。
 >"kg:chineseName"也是一个IRI，用来表示“中文名”这样一个属性。"kg:"是RDF文件中所定义的prefix，如下所示。
->@prefix kg: <http://www.kg.com/ontology/>
+>>@prefix kg: <http://www.kg.com/ontology/>
