@@ -3,9 +3,12 @@
 - [RDF](#RDF)
   - [知识图谱的基石](#知识图谱的基石)
   - [RDF的三种类型](#RDF的三种类型)
+  - [RDF序列化方法](#RDF序列化方法)
+- [RDF的“衣服”——RDFS/OWL](#RDF的“衣服”——RDFS/OWL)
+
   
 <!-- /TOC-->
-
+--------------------------------------------------
 ## RDF
 ### 知识图谱的基石
 - 知识图谱是由一些相互连接的**实体**和他们的**属性**构成的。
@@ -94,3 +97,8 @@
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:hasBirthPlace place:10086.  
 >place:10086 :address "里约热内卢"^^string;  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:coordinate "-22.908333, -43.196389"^^string.  
+- ***将一个实体用一个句子表示（这里的句子指的是一个英文句号“.”）而不是多个句子，属性间用分号隔开。***
+-----------------------------------------------
+
+## RDF的“衣服”——RDFS/OWL
+之所以说RDFS/OWL是RDF的“衣服”，因为它们都是用来描述RDF数据的。为了不显得这么抽象，我们可以用关系数据库中的概念进行类比。用过Mysql的读者应该知道，其database也被称作schema。这个schema和我们这里提到的schema language十分类似。我们可以认为数据库中的每一张表都是一个类（Class），表中的每一行都是该类的一个实例或者对象（学过java等面向对象的编程语言的读者很容易理解）。表中的每一列就是这个类所包含的属性。如果我们是在数据库中来表示人和地点这两个类别，那么为他们分别建一张表就行了；再用另外一张表来表示人和地点之间的关系。RDFS/OWL本质上是一些预定义词汇（vocabulary）构成的集合，用于对RDF进行类似的类定义及其属性的定义。
