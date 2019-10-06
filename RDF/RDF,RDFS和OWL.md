@@ -111,51 +111,51 @@
 - 还是以罗纳尔多知识图为例，我们在概念、抽象层面对RDF数据进行定义。
 - 下面的RDFS定义了人和地点这两个类，及每个类包含的属性。
 
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix : <http://www.kg.com/ontology/> .
+>@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+>@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+>@prefix : <http://www.kg.com/ontology/> .  
 
-### 这里我们用词汇rdfs:Class定义了“人”和“地点”这两个类。
-:Person rdf:type rdfs:Class.
-:Place rdf:type rdfs:Class.
+- 这里我们用词汇rdfs:Class定义了“人”和“地点”这两个类。
+>:Person rdf:type rdfs:Class.  
+>:Place rdf:type rdfs:Class.  
 
-### rdfs当中不区分数据属性和对象属性，词汇rdf:Property定义了属性，即RDF的“边”。
-:chineseName rdf:type rdf:Property;
-        rdfs:domain :Person;
-        rdfs:range xsd:string .
+- rdfs当中不区分数据属性和对象属性，词汇rdf:Property定义了属性，即RDF的“边”。
+>:chineseName rdf:type rdf:Property;  
+>        rdfs:domain :Person;  
+>        rdfs:range xsd:string .  
+ 
+>:career rdf:type rdf:Property;  
+>        rdfs:domain :Person;  
+>        rdfs:range xsd:string .  
+        
+>:fullName rdf:type rdf:Property;  
+>        rdfs:domain :Person;  
+>        rdfs:range xsd:string .  
+        
+>:birthDate rdf:type rdf:Property;  
+>       rdfs:domain :Person;  
+>       rdfs:range xsd:date .  
 
-:career rdf:type rdf:Property;
-        rdfs:domain :Person;
-        rdfs:range xsd:string .
+>:height rdf:type rdf:Property;  
+>        rdfs:domain :Person;  
+>        rdfs:range xsd:int .  
         
-:fullName rdf:type rdf:Property;
-        rdfs:domain :Person;
-        rdfs:range xsd:string .
+>:weight rdf:type rdf:Property;  
+>        rdfs:domain :Person;  
+>        rdfs:range xsd:int .  
         
-:birthDate rdf:type rdf:Property;
-        rdfs:domain :Person;
-        rdfs:range xsd:date .
-
-:height rdf:type rdf:Property;
-        rdfs:domain :Person;
-        rdfs:range xsd:int .
+>:nationality rdf:type rdf:Property;  
+>        rdfs:domain :Person;  
+>        rdfs:range xsd:string .  
         
-:weight rdf:type rdf:Property;
-        rdfs:domain :Person;
-        rdfs:range xsd:int .
+>:hasBirthPlace rdf:type rdf:Property;  
+>        rdfs:domain :Person;  
+>        rdfs:range :Place .  
         
-:nationality rdf:type rdf:Property;
-        rdfs:domain :Person;
-        rdfs:range xsd:string .
+>:address rdf:type rdf:Property;  
+>        rdfs:domain :Place;  
+>        rdfs:range xsd:string .  
         
-:hasBirthPlace rdf:type rdf:Property;
-        rdfs:domain :Person;
-        rdfs:range :Place .
-        
-:address rdf:type rdf:Property;
-        rdfs:domain :Place;
-        rdfs:range xsd:string .
-        
-:coordinate rdf:type rdf:Property;
-        rdfs:domain :Place;
-        rdfs:range xsd:string .
+>:coordinate rdf:type rdf:Property;  
+>        rdfs:domain :Place;  
+>        rdfs:range xsd:string .  
