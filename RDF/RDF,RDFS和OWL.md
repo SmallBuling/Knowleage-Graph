@@ -103,3 +103,59 @@
 ## RDF的“衣服”——RDFS/OWL
 之所以说RDFS/OWL是RDF的“衣服”，因为它们都是用来描述RDF数据的。为了不显得这么抽象，我们可以用关系数据库中的概念进行类比。用过Mysql的读者应该知道，其database也被称作schema。这个schema和我们这里提到的schema language十分类似。我们可以认为数据库中的每一张表都是一个类（Class），表中的每一行都是该类的一个实例或者对象（学过java等面向对象的编程语言的读者很容易理解）。表中的每一列就是这个类所包含的属性。如果我们是在数据库中来表示人和地点这两个类别，那么为他们分别建一张表就行了；再用另外一张表来表示人和地点之间的关系。RDFS/OWL本质上是一些预定义词汇（vocabulary）构成的集合，用于对RDF进行类似的类定义及其属性的定义。   
 >Notice: RDFS/OWL序列化方式和RDF没什么不同，其实在表现形式上，它们就是RDF。其常用的方式主要是RDF/XML，Turtle。另外，通常我们用小写开头的单词或词组来表示属性，大写开头的表示类。数据属性（data property，实体和literal字面量的关系）通常由名词组成，而对象数据（object property，实体和实体之间的关系）通常由动词（has，is之类的）加名词组成。剩下的部分符合驼峰命名法。为了将它们表示得更清楚，避免读者混淆，之后我们都会默认这种命名方式。读者实践过程中命名方式没有强制要求，但最好保持一致。
+
+-------------------------------------------------
+
+## RDFS
+- RDFS，即“Resource Description Framework Schema”，是最基础的模式语言。
+- 还是以罗纳尔多知识图为例，我们在概念、抽象层面对RDF数据进行定义。
+- 下面的RDFS定义了人和地点这两个类，及每个类包含的属性。
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://www.kg.com/ontology/> .
+
+### 这里我们用词汇rdfs:Class定义了“人”和“地点”这两个类。
+:Person rdf:type rdfs:Class.
+:Place rdf:type rdfs:Class.
+
+### rdfs当中不区分数据属性和对象属性，词汇rdf:Property定义了属性，即RDF的“边”。
+:chineseName rdf:type rdf:Property;
+        rdfs:domain :Person;
+        rdfs:range xsd:string .
+
+:career rdf:type rdf:Property;
+        rdfs:domain :Person;
+        rdfs:range xsd:string .
+        
+:fullName rdf:type rdf:Property;
+        rdfs:domain :Person;
+        rdfs:range xsd:string .
+        
+:birthDate rdf:type rdf:Property;
+        rdfs:domain :Person;
+        rdfs:range xsd:date .
+
+:height rdf:type rdf:Property;
+        rdfs:domain :Person;
+        rdfs:range xsd:int .
+        
+:weight rdf:type rdf:Property;
+        rdfs:domain :Person;
+        rdfs:range xsd:int .
+        
+:nationality rdf:type rdf:Property;
+        rdfs:domain :Person;
+        rdfs:range xsd:string .
+        
+:hasBirthPlace rdf:type rdf:Property;
+        rdfs:domain :Person;
+        rdfs:range :Place .
+        
+:address rdf:type rdf:Property;
+        rdfs:domain :Place;
+        rdfs:range xsd:string .
+        
+:coordinate rdf:type rdf:Property;
+        rdfs:domain :Place;
+        rdfs:range xsd:string .
