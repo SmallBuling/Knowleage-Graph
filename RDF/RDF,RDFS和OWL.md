@@ -51,10 +51,10 @@
 ><http://www.kg.com/person/1> <http://www.kg.com/ontology/chineseName> "罗纳尔多·路易斯·纳萨里奥·德·利马"^^string.  
 ><http://www.kg.com/person/1> <http://www.kg.com/ontology/career> "足球运动员"^^string.  
 ><http://www.kg.com/person/1> <http://www.kg.com/ontology/fullName> "Ronaldo Luís Nazário de Lima"^^string.  
-><http://www.kg.com/person/1> <http://www.kg.com/ontology/birthDate> "1976-09-18"^^date.
-><http://www.kg.com/person/1> <http://www.kg.com/ontology/height> "180"^^int.
-><http://www.kg.com/person/1> <http://www.kg.com/ontology/weight> "98"^^int.
-><http://www.kg.com/person/1> <http://www.kg.com/ontology/nationality> "巴西"^^string.
-><http://www.kg.com/person/1> <http://www.kg.com/ontology/hasBirthPlace> <http://www.kg.com/place/10086>.
-><http://www.kg.com/place/10086> <http://www.kg.com/ontology/address> "里约热内卢"^^string.
-><http://www.kg.com/place/10086> <http://www.kg.com/ontology/coordinate> "-22.908333, -43.196389"^^string.
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/birthDate> "1976-09-18"^^date.  
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/height> "180"^^int.  
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/weight> "98"^^int.  
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/nationality> "巴西"^^string.  
+><http://www.kg.com/person/1> <http://www.kg.com/ontology/hasBirthPlace> <http://www.kg.com/place/10086>.  
+><http://www.kg.com/place/10086> <http://www.kg.com/ontology/address> "里约热内卢"^^string.  
+><http://www.kg.com/place/10086> <http://www.kg.com/ontology/coordinate> "-22.908333, -43.196389"^^string.  
