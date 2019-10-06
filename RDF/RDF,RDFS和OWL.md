@@ -237,3 +237,9 @@
     - owl:equivalentClass. 表示某个类和另一个类是相同的。
     - owl:equivalentProperty. 表示某个属性和另一个属性是相同的。
     - owl:sameAs. 表示两个实体是同一个实体。
+
+- 本体映射主要用在融合多个独立的Ontology（Schema）。
+    - 举个例子，张三自己构建了一个本体结构，其中定义了Person这样一个类来表示人；李四则在自己构建的本体中定义Human这个类来表示人。当我们融合这两个本体的时候，就可以用到OWL的本体映射词汇。
+><http://www.zhangsan.com/ontology/Person> rdf:type owl:Class .  
+><http://www.lisi.com/ontology/Human> rdf:type owl:Class .  
+><http://www.zhangsan.com/ontology/Person> owl:equivalentClass <http://www.lisi.com/ontology/Human> .
