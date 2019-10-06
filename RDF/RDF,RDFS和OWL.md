@@ -58,3 +58,21 @@
 ><http://www.kg.com/person/1> <http://www.kg.com/ontology/hasBirthPlace> <http://www.kg.com/place/10086>.  
 ><http://www.kg.com/place/10086> <http://www.kg.com/ontology/address> "里约热内卢"^^string.  
 ><http://www.kg.com/place/10086> <http://www.kg.com/ontology/coordinate> "-22.908333, -43.196389"^^string.  
+
+- 用Turtle表示的时候我们会加上前缀（Prefix）对RDF的IRI进行缩写。
+>Example2 Turtle:  
+
+>@prefix person: <http://www.kg.com/person/> .  
+>@prefix place: <http://www.kg.com/place/> .  
+>@prefix : <http://www.kg.com/ontology/> .  
+
+>person:1 :chineseName "罗纳尔多·路易斯·纳萨里奥·德·利马"^^string.  
+>person:1 :career "足球运动员"^^string.  
+>person:1 :fullName "Ronaldo Luís Nazário de Lima"^^string.  
+>person:1 :birthDate "1976-09-18"^^date.  
+>person:1 :height "180"^^int.   
+>person:1 :weight "98"^^int.  
+>person:1 :nationality "巴西"^^string.   
+>person:1 :hasBirthPlace place:10086.  
+>place:10086 :address "里约热内卢"^^string.  
+>place:10086 :coordinate "-22.908333, -43.196389"^^string.  
