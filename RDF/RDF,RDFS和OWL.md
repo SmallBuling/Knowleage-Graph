@@ -160,8 +160,67 @@
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:domain :Place;  
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:range xsd:string .  
 
-1. rdfs:Class. 用于定义类。
-2. rdfs:domain. 用于表示该属性属于哪个类别。
-3. rdfs:range. 用于描述该属性的取值类型。
-4. rdfs:subClassOf. 用于描述该类的父类。比如，我们可以定义一个运动员类，声明该类是人的子类。
-5. rdfs:subProperty. 用于描述该属性的父属性。比如，我们可以定义一个名称属性，声明中文名称和全名是名称的子类。
+- rdfs:Class. 用于定义类。
+- rdfs:domain. 用于表示该属性属于哪个类别。
+- rdfs:range. 用于描述该属性的取值类型。
+- rdfs:subClassOf. 用于描述该类的父类。比如，我们可以定义一个运动员类，声明该类是人的子类。
+- rdfs:subProperty. 用于描述该属性的父属性。比如，我们可以定义一个名称属性，声明中文名称和全名是名称的子类。
+
+------------------------------------------------------------------
+
+## OWL
+- RDFS本质上是RDF词汇的一个扩展。后来人们发现RDFS的表达能力还是相当有限，因此提出了OWL。
+- 我们也可以把OWL当做是RDFS的一个扩展，其添加了额外的预定义词汇。
+- OWL，即“Web Ontology Language”，语义网技术栈的核心之一。OWL有两个主要的功能：
+    - 提供快速、灵活的数据建模能力。
+    - 高效的自动推理。
+### 数据建模能力
+>@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+>@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .  
+>@prefix : <http://www.kg.com/ontology/> .  
+>@prefix owl: <http://www.w3.org/2002/07/owl#> .  
+
+- 这里我们用词汇owl:Class定义了“人”和“地点”这两个类。
+>:Person rdf:type owl:Class.  
+>:Place rdf:type owl:Class.  
+
+- owl区分数据属性和对象属性（对象属性表示实体和实体之间的关系）。**词汇owl:DatatypeProperty定义了数据属性，owl:ObjectProperty定义了对象属性**。
+>:chineseName rdf:type owl:DatatypeProperty;
+        rdfs:domain :Person;
+        rdfs:range xsd:string .
+
+:career rdf:type owl:DatatypeProperty;
+        rdfs:domain :Person;
+        rdfs:range xsd:string .
+        
+:fullName rdf:type owl:DatatypeProperty;
+        rdfs:domain :Person;
+        rdfs:range xsd:string .
+        
+:birthDate rdf:type owl:DatatypeProperty;
+        rdfs:domain :Person;
+        rdfs:range xsd:date .
+
+:height rdf:type owl:DatatypeProperty;
+        rdfs:domain :Person;
+        rdfs:range xsd:int .
+        
+:weight rdf:type owl:DatatypeProperty;
+        rdfs:domain :Person;
+        rdfs:range xsd:int .
+        
+:nationality rdf:type owl:DatatypeProperty;
+        rdfs:domain :Person;
+        rdfs:range xsd:string .
+        
+:hasBirthPlace rdf:type owl:ObjectProperty;
+        rdfs:domain :Person;
+        rdfs:range :Place .
+        
+:address rdf:type owl:DatatypeProperty;
+        rdfs:domain :Place;
+        rdfs:range xsd:string .
+        
+:coordinate rdf:type owl:DatatypeProperty;
+        rdfs:domain :Place;
+        rdfs:range xsd:string .
