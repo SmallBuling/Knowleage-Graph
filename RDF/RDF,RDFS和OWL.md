@@ -85,7 +85,7 @@
 >@prefix : <http://www.kg.com/ontology/> .  
 
 >person:1 :chineseName "罗纳尔多·路易斯·纳萨里奥·德·利马"^^string;  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:career "足球运动员"^^string;  
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:career "足球运动员"^^string;  
 >         :fullName "Ronaldo Luís Nazário de Lima"^^string;  
 >         :birthDate "1976-09-18"^^date;  
 >         :height "180"^^int;  
